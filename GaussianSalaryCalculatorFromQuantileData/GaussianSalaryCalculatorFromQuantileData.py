@@ -44,6 +44,9 @@ def optimizeAndReturnSalaryLevels(salCalc,old_salary_levels_var ,old_salary_perc
 
 #Loading old salary and percentile data
 old_salary_levels = [95430, 120578, 145725, 170872]
+old_sal_string = input("Enter the 4 levels of salary in $ with space (ex: 100000 110000 120000 130000) ")
+salaryInString = (old_sal_string.split())
+old_salary_levels[:] = [float(x) for x in salaryInString]
 old_salary_percentile_levels = [17,34,50,67]
 
 #Loading new percentile data
@@ -67,5 +70,6 @@ optimizedVector.append(optimizedVal.x[1])
 finalSalaryList = get_distribution_data_final(s1,optimizedVector)
 
 #Printing results
+print("New salary levels are as follows:")
 print(np.round(finalSalaryList,2))
 
