@@ -20,7 +20,6 @@ def get_distribution_data(inputVar,salaryCalculatorVar):
     unit_vector = np.ones(percentileValues.size) 
     salary_list = unit_vector*mean + np.multiply(std_dev*unit_vector,sp.erf(2*percentileValues-1))
     errorVector = salary_list - salaryCalculatorVar.get_old_salary_values()
-    print(errorVector)
     return np.sum(np.abs(errorVector))
 
 # Function used for calculating final salarys from 
